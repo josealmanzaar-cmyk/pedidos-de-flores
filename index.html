@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Mi Bella creación</title>
+    <link rel="stylesheet" href="flores1.css">
+</head>
+<body>
+    <div class="titulo">
+        <h1>Bienvenidos a Mi Bella creación</h1>
+        <h3>Dónde tus ideas se convierten en realidad</h3>
+        <p>Hacer flores de foami es mucho más que una manualidad: es plasmar tus ideas y emociones en cada pétalo. Cada diseño es único, hecho a mano y con cariño. Aquí encontrarás la flor que mejor hable por ti.</p>
+    </div>
+
+    <div class="contenido">
+        <h2 class="banda">Nuestras flores</h2>
+
+        <div class="tarjeta">
+            <img class="foto" src="gardenia.jpg" alt="Peonia">
+            <h2 class="nombre">Peonia</h2>
+            <p><span class="precio">$40</span></p>
+            <p class="descripcion">"Espectacular peonía elaborada artesanalmente en foami de color blanco puro. Destaca por su centro tupido de pétalos cortos y rizados que se abren gradualmente en capas más amplias y suavemente onduladas, luciendo un delicado matiz verde tierno en el corazón de la flor. Incluye en la base dos hojas verdes de acabado brillante con nervaduras marcadas. "</p>
+        </div>
+
+        <div class="tarjeta">
+            <img class="foto" src="obelisco.jpg" alt="Obelisco">
+            <h2 class="nombre">Obelisco</h2>
+            <p><span class="precio">$150</span></p>
+            <p class="descripcion">"Elegante composición de mesa con botones y flores de obelisco rojo elaboradas en foami. Las flores de cuentan con pétalos estilizados y cálices verdes bien definidos en la base. El ramillete está presentado en un florero de cristal cilíndrico decorado con motivos de corazones rojos y un listón de yute rústico en la parte superior."</p>
+        </div>
+
+        <div class="tarjeta">
+            <img class="foto" src="Rosota.jpg" alt="Rosa gigante">
+            <h2 class="nombre">Rosa gigante</h2>
+            <p><span class="precio">$800 (color a elección)</span></p>
+            <p class="descripcion">"Impresionante rosa gigante de foami en color rojo intenso, diseñada con pétalos voluminosos, cóncavos y ligeramente curvados hacia afuera para imitar una flor natural en plena apertura. Montada sobre un tallo erguido y flexible de gran altura con hojas anchas y detalladas, asentada en una base decorativa que garantiza estabilidad."</p>
+        </div>
+
+        <div class="tarjeta">
+            <img class="foto" src="girasolote.jpg" alt="Girasol gigante">
+            <h2 class="nombre">Girasol gigante</h2>
+            <p><span class="precio">$800</span></p>
+            <p class="descripcion">"Impresionante girasol de gran formato confeccionado en foami amarillo cálido. Posee múltiples capas de pétalos finos modelados a mano y un centro circular en tonos oscuros con textura detallada. Su tallo firme y base verde lo convierten en una pieza de pie imponente para eventos o ambientaciones especiales."</p>
+        </div>
+
+        <div class="tarjeta">
+            <img class="foto" src="arreglo.jpg" alt="Arreglo floral">
+            <h2 class="nombre">Arreglo floral</h2>
+            <p><span class="precio">$220</span></p>
+            <p class="descripcion">"Arreglo artesanal hecho a mano en foami. Protagonizado por dos rosas rojas de gran tamaño, acompañado de tulipanes en tonos blanco, rojo y rosa, y detalles de flores amarillas, blancas y baby's breath. Montado en maceta rectangular color terracota. Ideal para decorar mesas, escritorios o como regalo duradero que no se marchita."</p>
+        </div>
+
+        <div class="tarjeta">
+            <img class="foto" src="gerberas.jpg" alt="Arreglo floral">
+            <h2 class="nombre">Arreglo floral</h2>
+            <p><span class="precio">$35</span></p>
+            <p class="descripcion">"Centro de mesa vibrante con 5 flores tipo gerbera gigantes hechas a mano en foami. Colores vivos: girasol amarillo, rojo con centro amarillo, naranja, rosa fucsia y blanco verdoso. Hojas verdes de gran tamaño que aportan frescura. Base pequeña ideal para mesas de sala, comedor o escritorio. Un toque de color que dura para siempre."</p>
+        </div>
+
+        <div class="pedido">
+            <h3>Arma tu pedido</h3>
+
+            <p class="etiqueta">Tu nombre</p>
+            <input id="nombreCliente" class="campo" type="text" placeholder="Escribe tu nombre completo">
+
+            <p class="etiqueta">Elige una opción</p>
+            <select id="eleccion" class="campo">
+                <option value="40">Peonia $40</option>
+                <option value="150">Obelisco $150</option>
+                <option value="800">Rosa gigante $800</option>
+                <option value="800">Girasol gigante $800</option>
+                <option value="220">Arreglo floral $220</option>
+                <option value="35">Gerbera $35</option>
+            </select>
+
+            <p class="etiqueta">Cantidad</p>
+            <input id="cantidad" class="campo" type="number" placeholder="Escribe la cantidad">
+
+            <button id="agregar" class="btn-agregar">🛒 Agregar al carrito</button>
+            <button id="btn_eleccion" class="btn-calcular"><img src="calculadora.png" alt="" class="peque"> Calcular</button>
+
+            <h3>Tu carrito</h3>
+            <ul id="lista" class="lista"></ul>
+
+            <p id="resultado" class="fila">Total:</p>
+            <p id="final" class="fila">Sub Total:</p>
+            <p id="iva" class="fila">IVA:</p>
+            <p id="precio_IVA" class="fila fila-final">Precio final:</p>
+
+            <p class="etiqueta">Forma de pago</p>
+            <button id="contado" class="btn-contado">Pagar al contado</button>
+
+            <button id="enviarPedido" class="btn-agregar" style="background-color: #2196F3; color: white; margin-top: 15px; width: 100%;">✅ Confirmar y Enviar Pedido</button>
+        </div>
+    </div>
+
+    <div class="pie">
+        <p>Mi Bella creación · Hecho a mano con cariño</p>
+    </div>
+
+    <script>
+    let calculo = document.getElementById("btn_eleccion");
+    let eleccion = document.getElementById("eleccion");
+    let cantidad = document.getElementById("cantidad");
+    let resultado = document.getElementById("resultado");
+    let lista = document.getElementById("lista");
+    let final = document.getElementById("final");
+    let btnContado = document.getElementById("contado");
+    let ivaTexto = document.getElementById("iva");
+    let precioIvaTexto = document.getElementById("precio_IVA");
+    let btnCredito = document.getElementById("btnCredito");
+
+    let totalGeneral = 0;
+    let metodoPagoElegido = "";
+
+    calculo.addEventListener("click", function(){
+        let precio = Number(eleccion.value);
+        let cant = Number(cantidad.value);
+        let total = 0;
+
+        if (cant <= 0) {
+            resultado.textContent = "Total: ingresa una cantidad válida";
+            return;
+        }
+
+        if (cant <= 4) {
+            total = precio * cant;
+            resultado.textContent = "Total: $" + total;
+        } else {
+            let descuento = precio * cant * 0.1;
+            total = precio * cant - descuento;
+            resultado.textContent = "Total: $" + total + " (descuento por mayoreo)";
+        }
+    });
+
+    let btnAgregar = document.getElementById("agregar");
+    btnAgregar.addEventListener("click", function(){
+        let precio = Number(eleccion.value);
+        let cant = Number(cantidad.value);
+        let nombre = eleccion.options[eleccion.selectedIndex].text;
+        let total = 0;
+
+        if (cant <= 0) return;
+
+        if (cant <= 4) {
+            total = precio * cant;
+        } else {
+            let descuento = precio * cant * 0.1;
+            total = precio * cant - descuento;
+        }
+
+        let item = document.createElement("li");
+        item.textContent = cant + " x " + nombre + " = $" + total + " ";
+        lista.appendChild(item);
+        resultado.textContent="Total: "
+
+        let btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Eliminar";
+        item.appendChild(btnEliminar);
+
+        btnEliminar.addEventListener("click", function(){
+            lista.removeChild(item);
+            totalGeneral -= total;
+            final.textContent = "Sub Total: $" + totalGeneral.toFixed(2);
+
+            if (totalGeneral <= 0) {
+                ivaTexto.textContent = "IVA: $0.00";
+                precioIvaTexto.textContent = "Precio final: $0.00";
+            } else {
+                let ivaCalculado = totalGeneral * 0.16;
+                let totalConIva = totalGeneral + ivaCalculado;
+                if (precioIvaTexto.dataset.modo === "credito") {
+                    totalConIva = totalConIva * 1.02;
+                }
+                ivaTexto.textContent = "IVA (16%): $" + ivaCalculado.toFixed(2);
+                precioIvaTexto.textContent = "Precio final: $" + totalConIva.toFixed(2);
+            }
+        });
+
+        totalGeneral += total;
+        final.textContent = "Sub Total: $" + totalGeneral.toFixed(2);
+        cantidad.value = "";
+    });
+
+    btnContado.addEventListener("click", function(){
+        precioIvaTexto.dataset.modo = "contado";
+        metodoPagoElegido = "Contado";
+        if (totalGeneral <= 0) {
+            ivaTexto.textContent = "IVA: $0.00";
+            precioIvaTexto.textContent = "Precio final: $0.00";
+            return;
+        }
+        let ivaCalculado = totalGeneral * 0.16;
+        let totalConIva = totalGeneral + ivaCalculado;
+
+        ivaTexto.textContent = "IVA (16%): $" + ivaCalculado.toFixed(2);
+        precioIvaTexto.textContent = "Precio final: $" + totalConIva.toFixed(2);
+    });
+
+
+    // =========================================================
+    // LÓGICA PARA ENVIAR A GOOGLE APPS SCRIPT (SIN ERROR DE CORS)
+    // =========================================================
+    let btnEnviar = document.getElementById("enviarPedido");
+    
+    // Aquí va tu URL real
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAQIXXATSuDu0Oox3GdSZ8Er_Ga1HKSNYTwlfhgMidGXyVR6KTfmh0uijqCXmCUKAm/exec';
+
+    btnEnviar.addEventListener("click", function() {
+        let nombreCliente = document.getElementById("nombreCliente").value.trim();
+        if (nombreCliente === "") {
+            alert("Por favor, escribe tu nombre.");
+            return;
+        }
+
+        let items = lista.getElementsByTagName("li");
+        if (items.length === 0) {
+            alert("Tu carrito está vacío. Agrega algo primero.");
+            return;
+        }
+
+        if (metodoPagoElegido === "") {
+            alert("Por favor, selecciona una forma de pago (Contado o Crédito).");
+            return;
+        }
+
+        let pedidoTexto = "";
+        for (let i = 0; i < items.length; i++) {
+            let textoLimpio = items[i].textContent.replace("Eliminar", "").trim();
+            pedidoTexto += textoLimpio + " | ";
+        }
+
+        let textoPrecioFinal = precioIvaTexto.textContent;
+        let totalFinal = Number(textoPrecioFinal.split("$")[1]);
+
+        if (isNaN(totalFinal) || totalFinal === 0) {
+            alert("Por favor, calcula el total antes de enviar.");
+            return;
+        }
+
+        let datosEnviar = {
+            Nombre: nombreCliente,
+            Pedido: pedidoTexto,
+            Total: totalFinal,
+            Pago: metodoPagoElegido
+        };
+
+        btnEnviar.textContent = "Enviando...";
+        btnEnviar.disabled = true;
+
+        // AQUÍ ESTÁ LA MAGIA PARA EVITAR EL ERROR DE CORS
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // <--- ESTO ES LO QUE SOLUCIONA EL ERROR
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            body: JSON.stringify(datosEnviar)
+        })
+        .then(() => {
+            // Como usamos 'no-cors', no podemos leer la respuesta de Google.
+            // Asumimos que se envió bien si no saltó un error de red.
+            alert("¡Muchas gracias " + nombreCliente + "! Tu pedido ha sido guardado.");
+            location.reload();
+        })
+        .catch(error => {
+            console.error("Error al enviar:", error);
+            alert("Hubo un error al enviar el pedido. Revisa tu conexión.");
+            btnEnviar.textContent = "✅ Confirmar y Enviar Pedido";
+            btnEnviar.disabled = false;
+        });
+    });
+    </script>
+</body>
+</html>

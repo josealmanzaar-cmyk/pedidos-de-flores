@@ -1,0 +1,172 @@
+body{
+    background-image: url(fondo1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #002b33;
+    color: white;
+    font-family: Arial;
+    margin: 0;
+}
+.contenido{
+    padding: 12px;
+}
+
+.titulo{
+    padding: 30px 15px;
+    background-image: url(madera.jpeg);
+    background-size: cover;
+    border-bottom: 4px solid #d9b66c;
+    text-align: center;
+}
+h1{
+    color: white;
+    font-family: cursive;
+    font-size: 32px;
+}
+h3{
+    color: #d9b66c;
+    font-family: Georgia;
+}
+.titulo p{
+    color: white;
+}
+
+.banda{
+    background-color: #0b3b43;
+    color: #d9b66c;
+    font-family: Georgia;
+    font-size: 24px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 15px;
+}
+.tarjeta{
+    background-color: #fff8f3;
+    color: #3d2a31;
+    padding: 15px;
+    margin: 20px 0 20px 0;
+    border-radius: 20px;
+}
+.foto{
+    width: 100%;
+    border-radius: 15px;
+}
+.nombre{
+    color: #0b3b43;
+    font-family: Georgia;
+    font-size: 24px;
+    margin: 12px 0 5px 0;
+}
+.precio{
+    background-color: #c2587f;
+    color: white;
+    font-size: 16px;
+    padding: 5px 14px;
+    border-radius: 15px;
+}
+.descripcion{
+    color: #3d2a31;
+    font-size: 15px;
+}
+
+.pedido{
+    background-color: #0b3b43;
+    border: 2px solid #d9b66c;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 30px 0 30px 0;
+    text-align: center;
+}
+.etiqueta{
+    color: #d9b66c;
+    font-size: 14px;
+    margin: 14px 0 4px 0;
+}
+.campo{
+    width: 90%;
+    padding: 8px;
+    font-size: 18px;
+    background-color: #fff8f3;
+    color: #3d2a31;
+    border: none;
+    border-radius: 12px;
+}
+
+button{
+    background-color: #f8e3ec;
+    color: #3d2a31;
+    font-size: 14px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color .3s;
+}
+button:hover{
+    background-color: #d98ca8;
+}
+button:active{
+    background-color: #c2587f;
+}
+.btn-agregar{
+    width: 100%;
+    padding: 14px;
+    margin: 14px 0 8px 0;
+    font-size: 18px;
+    background-color: #c2587f;
+    color: white;
+}
+.btn-calcular{
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+.btn-contado{
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #d9b66c;
+}
+.btn-credito{
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #1f6a5f;
+    color: white;
+}
+.peque{
+    width: 16px;
+    height: 16px;
+}
+
+.lista{
+    text-align: left;
+}
+li{
+    background-color: #164a52;
+    color: white;
+    padding: 10px;
+    margin: 8px 0 8px 0;
+    border-radius: 10px;
+}
+.fila{
+    background-color: #164a52;
+    color: #fff8f3;
+    font-size: 16px;
+    padding: 10px;
+    margin: 6px 0 6px 0;
+    border-radius: 10px;
+}
+.fila-final{
+    background-color: #062a30;
+    color: #d9b66c;
+    font-family: Georgia;
+    font-size: 26px;
+}
+
+.pie{
+    text-align: center;
+    color: #f8e3ec;
+    font-size: 14px;
+    padding: 20px;
+}
