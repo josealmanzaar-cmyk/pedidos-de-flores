@@ -89,7 +89,7 @@
             <p id="precio_IVA" class="fila fila-final">Precio final:</p>
 
             <p class="etiqueta">Forma de pago</p>
-            <button id="contado" class="btn-contado">Pagar al contado</button><button id="btnCredito" class="btn-credito">Pagar a credito</button>
+            <button id="contado" class="btn-contado">Confirmar selección de productos</button>
 
             <button id="enviarPedido" class="btn-agregar" style="background-color: #2196F3; color: white; margin-top: 15px; width: 100%;">✅ Confirmar y Enviar Pedido</button>
         </div>
@@ -205,20 +205,6 @@
         }
         let ivaCalculado = totalGeneral * 0.16;
         let totalConIva = totalGeneral + ivaCalculado;
-
-        ivaTexto.textContent = "IVA (16%): $" + ivaCalculado.toFixed(2);
-        precioIvaTexto.textContent = "Precio final: $" + totalConIva.toFixed(2);
-    });
-    btnCredito.addEventListener("click", function(){
-        precioIvaTexto.dataset.modo = "credito";
-        metodoPagoElegido = "Credito";
-        if (totalGeneral <= 0) {
-            ivaTexto.textContent = "IVA: $0.00";
-            precioIvaTexto.textContent = "Precio final: $0.00";
-            return;
-        }
-        let ivaCalculado = totalGeneral * 0.16;
-        let totalConIva = (totalGeneral + ivaCalculado)*1.02;
 
         ivaTexto.textContent = "IVA (16%): $" + ivaCalculado.toFixed(2);
         precioIvaTexto.textContent = "Precio final: $" + totalConIva.toFixed(2);
