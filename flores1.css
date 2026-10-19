@@ -85,6 +85,7 @@ h3{
 }
 .campo{
     width: 90%;
+    box-sizing: border-box;
     padding: 8px;
     font-size: 18px;
     background-color: #fff8f3;
@@ -163,10 +164,30 @@ li{
     font-family: Georgia;
     font-size: 26px;
 }
-
-.pie{
-    text-align: center;
-    color: #f8e3ec;
-    font-size: 14px;
+.footer {
+    background-color: #3b2314;
+    color: white;
     padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+    margin: 6px 0;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 14px 0;
+}
+
+.redes a {
+    color: white;
+}
+
+.derechos {
+    font-size: 12px;
 }
