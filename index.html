@@ -91,7 +91,7 @@
             <p class="etiqueta">Forma de pago</p>
             <button id="contado" class="btn-contado">Confirmar selección de productos</button>
 
-            <button id="enviarPedido" class="btn-agregar" style="background-color: #2196F3; color: white; margin-top: 15px; width: 100%;">✅ Confirmar y Enviar Pedido</button>
+            <button id="enviarPedido" class="btn-agregar" style="background-color: #2196F3; color: white; margin-top: 15px; width: 100%;">✅ Enviar Pedido</button>
         </div>
     </div>
 
@@ -271,7 +271,7 @@
         .then(() => {
             // Como usamos 'no-cors', no podemos leer la respuesta de Google.
             // Asumimos que se envió bien si no saltó un error de red.
-            alert("¡Muchas gracias " + nombreCliente + "! Tu pedido ha sido guardado.");
+            alert("¡Muchas gracias " + nombreCliente + "! Tu pedido ha sido guardado. Favor de comunicarse al numero de WhatsApp al final de la pagina para confirmar fecha de entrega");
             location.reload();
         })
         .catch(error => {
