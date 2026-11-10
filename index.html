@@ -379,3 +379,13 @@
                 })
                 .catch(() => mostrarGracias('Recibimos tu pedido',
                     'No pudimos revisar el pago en este momento.
+Escríbenos por WhatsApp con tu referencia ' + ref + '.', wa));
+        })();
+    })();
+
+    $('nuevoPedido').addEventListener('click', () => location.reload());
+
+    render();
+    </script>
+</body>
+</html>
