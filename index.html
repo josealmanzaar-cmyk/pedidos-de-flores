@@ -7,6 +7,9 @@
     <meta charset="UTF-8">
     <title>Flores de foami en Colima | Mi Bella Creación</title>
     <link rel="stylesheet" href="flores1.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <div class="titulo">
@@ -16,273 +19,363 @@
     </div>
 
     <div class="contenido">
-        <h2 class="banda">Nuestras flores</h2>
+        <ol class="como-pedir">
+            <li><b>1</b>Elige tus flores</li>
+            <li><b>2</b>Llena tus datos</li>
+            <li><b>3</b>Te confirmamos por WhatsApp</li>
+        </ol>
 
-        <div class="tarjeta">
-            <img class="foto" src="gardenia.jpg" alt="Peonia">
+        <h2 class="banda">Nuestras flores</h2>
+        <p class="aviso-mayoreo">🎁 5 piezas o más de la misma flor: <b>10% de descuento</b></p>
+
+        <div class="tarjeta" data-id="peonia" data-nombre="Peonia" data-precio="40">
+            <img class="foto" src="gardenia.jpg" alt="Peonia de foami blanca" loading="lazy">
             <h2 class="nombre">Peonia</h2>
-            <p><span class="precio">$40</span></p>
+            <p><span class="precio">$40 c/u</span></p>
             <p class="descripcion">Espectacular peonía elaborada artesanalmente en foami de color blanco puro. Destaca por su centro tupido de pétalos cortos y rizados que se abren gradualmente en capas más amplias y suavemente onduladas, luciendo un delicado matiz verde tierno en el corazón de la flor. Incluye en la base dos hojas verdes de acabado brillante con nervaduras marcadas.</p>
         </div>
 
-        <div class="tarjeta">
-            <img class="foto" src="obelisco.jpg" alt="Obelisco">
+        <div class="tarjeta" data-id="obelisco" data-nombre="Obelisco" data-precio="150">
+            <img class="foto" src="obelisco.jpg" alt="Obelisco" loading="lazy">
             <h2 class="nombre">Obelisco</h2>
-            <p><span class="precio">$150</span></p>
+            <p><span class="precio">$150 c/u</span></p>
             <p class="descripcion">Elegante composición de mesa con botones y flores de obelisco rojo elaboradas en foami. Las flores cuentan con pétalos estilizados y cálices verdes bien definidos en la base. El ramillete está presentado en un florero de cristal cilíndrico decorado con motivos de corazones rojos y un listón de yute rústico en la parte superior.</p>
         </div>
 
-        <div class="tarjeta">
-            <img class="foto" src="Rosota.jpg" alt="Rosa gigante">
+        <div class="tarjeta" data-id="rosa" data-nombre="Rosa gigante" data-precio="800">
+            <img class="foto" src="Rosota.jpg" alt="Rosa gigante" loading="lazy">
             <h2 class="nombre">Rosa gigante</h2>
-            <p><span class="precio">$800 (color a elección)</span></p>
+            <p><span class="precio">$800 c/u (color a elección)</span></p>
             <p class="descripcion">Impresionante rosa gigante de foami en color rojo intenso, diseñada con pétalos voluminosos, cóncavos y ligeramente curvados hacia afuera para imitar una flor natural en plena apertura. Montada sobre un tallo erguido y flexible de gran altura con hojas anchas y detalladas, asentada en una base decorativa que garantiza estabilidad.</p>
         </div>
 
-        <div class="tarjeta">
-            <img class="foto" src="girasolote.jpg" alt="Girasol gigante">
+        <div class="tarjeta" data-id="girasol" data-nombre="Girasol gigante" data-precio="800">
+            <img class="foto" src="girasolote.jpg" alt="Girasol gigante" loading="lazy">
             <h2 class="nombre">Girasol gigante</h2>
-            <p><span class="precio">$800</span></p>
+            <p><span class="precio">$800 c/u</span></p>
             <p class="descripcion">Impresionante girasol de gran formato confeccionado en foami amarillo cálido. Posee múltiples capas de pétalos finos modelados a mano y un centro circular en tonos oscuros con textura detallada. Su tallo firme y base verde lo convierten en una pieza de pie imponente para eventos o ambientaciones especiales.</p>
         </div>
 
-        <div class="tarjeta">
-            <img class="foto" src="arreglo.jpg" alt="Arreglo floral">
+        <div class="tarjeta" data-id="arreglo" data-nombre="Arreglo floral" data-precio="220">
+            <img class="foto" src="arreglo.jpg" alt="Arreglo floral" loading="lazy">
             <h2 class="nombre">Arreglo floral</h2>
-            <p><span class="precio">$220</span></p>
+            <p><span class="precio">$220 c/u</span></p>
             <p class="descripcion">Arreglo artesanal hecho a mano en foami. Protagonizado por dos rosas rojas de gran tamaño, acompañado de tulipanes en tonos blanco, rojo y rosa, y detalles de flores amarillas, blancas y baby's breath. Montado en maceta rectangular color terracota. Ideal para decorar mesas, escritorios o como regalo duradero que no se marchita.</p>
         </div>
 
-        <div class="tarjeta">
-            <img class="foto" src="gerberas.jpg" alt="Centro de gerberas">
+        <div class="tarjeta" data-id="gerberas" data-nombre="Centro de gerberas" data-precio="35" data-unidad="flores">
+            <img class="foto" src="gerberas.jpg" alt="Centro de gerberas" loading="lazy">
             <h2 class="nombre">Centro de gerberas</h2>
-            <p><span class="precio">$35 (por cada flor que contenga el arreglo)</span></p>
+            <p><span class="precio">$35 por cada flor que contenga el arreglo</span></p>
             <p class="descripcion">Centro de mesa vibrante con 5 flores tipo gerbera gigantes hechas a mano en foami. Colores vivos: girasol amarillo, rojo con centro amarillo, naranja, rosa fucsia y blanco verdoso. Hojas verdes de gran tamaño que aportan frescura. Base pequeña ideal para mesas de sala, comedor o escritorio. Un toque de color que dura para siempre.</p>
         </div>
 
-        <div class="pedido">
+        <div class="pedido" id="pedido">
             <h3>Arma tu pedido</h3>
-
-            <p class="etiqueta">Tu nombre</p>
-            <input id="nombreCliente" class="campo" type="text" placeholder="Escribe tu nombre completo">
-
-            <p class="etiqueta">Elige una opción</p>
-            <select id="eleccion" class="campo">
-                <option value="40">Peonia $40</option>
-                <option value="150">Obelisco $150</option>
-                <option value="800">Rosa gigante $800</option>
-                <option value="800">Girasol gigante $800</option>
-                <option value="220">Arreglo floral $220</option>
-                <option value="35">Centro de gerberas $35</option>
-            </select>
-
-            <p class="etiqueta">Cantidad</p>
-            <input id="cantidad" class="campo" type="number" min="1" step="1" placeholder="Escribe la cantidad">
-
-            <button id="agregar" class="btn-agregar">🛒 Agregar al carrito</button>
-            <button id="btn_eleccion" class="btn-calcular"><img src="calculadora.png" alt="" class="peque"> Calcular</button>
 
             <h3>Tu carrito</h3>
             <ul id="lista" class="lista"></ul>
 
-            <p id="resultado" class="fila">Total:</p>
-            <p id="final" class="fila">Sub Total:</p>
-            <p id="iva" class="fila">IVA:</p>
-            <p id="precio_IVA" class="fila fila-final">Precio final:</p>
+            <p id="final" class="fila">Sub Total: $0.00</p>
+            <p id="iva" class="fila">IVA (16%): $0.00</p>
+            <p id="precio_IVA" class="fila fila-final">Total: $0.00</p>
+            <p id="msgDescuento" class="fila-pequena"></p>
+
+            <h3>Tus datos</h3>
+
+            <p class="etiqueta">Tu nombre</p>
+            <input id="nombreCliente" class="campo" type="text" autocomplete="name" placeholder="Escribe tu nombre completo">
+
+            <p class="etiqueta">Tu teléfono / WhatsApp</p>
+            <input id="telefono" class="campo" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ej. 312 123 4567">
+
+            <p class="etiqueta">¿Cómo lo quieres?</p>
+            <select id="entrega" class="campo">
+                <option value="Recoger en tienda">Paso a recogerlo</option>
+                <option value="Envío a domicilio">Envío a domicilio</option>
+            </select>
+
+            <div id="bloqueDireccion" style="display:none">
+                <p class="etiqueta">Dirección de entrega</p>
+                <input id="direccion" class="campo" type="text" autocomplete="street-address" placeholder="Calle, número, colonia">
+            </div>
+
+            <p class="etiqueta">¿Para qué fecha lo necesitas?</p>
+            <input id="fecha" class="campo" type="date">
+
+            <p class="etiqueta">Notas (colores, listón, mensaje...)</p>
+            <textarea id="notas" class="campo" placeholder="Ej. Quiero la rosa en color rosa y con listón dorado"></textarea>
 
             <p class="etiqueta">Forma de pago</p>
-            <button id="contado" class="btn-contado">Confirmar selección de productos</button>
+            <select id="pago" class="campo">
+                <option value="">Elige una opción</option>
+                <option value="Tarjeta">💳 Tarjeta de crédito o débito (pago seguro en línea)</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>
+
+            <p id="notaTarjeta" class="fila-pequena" style="display:none">🔒 Te llevaremos a Mercado Pago para pagar con tarjeta. Nosotros no vemos ni guardamos los datos de tu tarjeta.</p>
+
+            <div id="error" class="error" role="alert"></div>
 
             <button id="enviarPedido" class="btn-agregar" style="background-color: #2196F3; color: white; margin-top: 15px; width: 100%;">✅ Enviar Pedido</button>
         </div>
+
+        <div id="gracias" class="gracias">
+            <h3 id="graciasTitulo">🌸 ¡Gracias!</h3>
+            <p id="graciasTexto"></p>
+            <a id="graciasWA" href="#" target="_blank" rel="noopener noreferrer">💬 Confirmar por WhatsApp</a><br>
+            <button id="nuevoPedido">Hacer otro pedido</button>
+        </div>
+    </div>
+
+    <a class="wa-flotante" href="https://wa.me/523121416216?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20flores%20de%20foami" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+
+    <div id="barra" class="barra" hidden>
+        <div>🛒 <span id="barraPiezas">0</span> pza · <strong id="barraTotal">$0.00</strong></div>
+        <button id="verPedido">Ver pedido</button>
     </div>
 
     <footer class="footer">
         <div class="datos">
             <p>Calle Matilde Gómez Cardenas #317, Colonia Torres Quintero</p>
-            <p>Tel: 312 367 8435</p>
-        <div class="redes">
-            <a href="https://www.facebook.com/profile.php?id=61579308225106" target="_blank" rel="noopener noreferrer">Mi Bella Creación en Facebook</a>
-            <a href="https://wa.me/523121416216" target="_blank">WhatsApp</a>
-            <a href="https://www.tiktok.com/@betty32601702" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <p>Tel: <a href="tel:+523123678435">312 367 8435</a></p>
+            <div class="redes">
+                <a href="https://www.facebook.com/profile.php?id=61579308225106" target="_blank" rel="noopener noreferrer">Mi Bella Creación en Facebook</a>
+                <a href="https://wa.me/523121416216" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="https://www.tiktok.com/@betty32601702" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
         </div>
         <p class="derechos">© 2026 Mi Bella creación. Todos los derechos reservados.</p>
     </footer>
-    
+
     <script>
-    let calculo = document.getElementById("btn_eleccion");
-    let eleccion = document.getElementById("eleccion");
-    let cantidad = document.getElementById("cantidad");
-    let resultado = document.getElementById("resultado");
-    let lista = document.getElementById("lista");
-    let final = document.getElementById("final");
-    let btnContado = document.getElementById("contado");
-    let ivaTexto = document.getElementById("iva");
-    let precioIvaTexto = document.getElementById("precio_IVA");
-    let btnCredito = document.getElementById("btnCredito");
-
-    let totalGeneral = 0;
-    let metodoPagoElegido = "";
-
-    calculo.addEventListener("click", function(){
-        let precio = Number(eleccion.value);
-        let cant = Number(cantidad.value);
-        let total = 0;
-
-        if (cant <= 0) {
-            resultado.textContent = "Total: ingresa una cantidad válida";
-            return;
-        }
-
-        if (cant <= 4) {
-            total = precio * cant;
-            resultado.textContent = "Total: $" + total;
-        } else {
-            let descuento = precio * cant * 0.1;
-            total = precio * cant - descuento;
-            resultado.textContent = "Total: $" + total + " (descuento por mayoreo)";
-        }
-    });
-
-    let btnAgregar = document.getElementById("agregar");
-
-    btnAgregar.addEventListener("click", function(){
-        let precio = Number(eleccion.value);
-        let cant = Number(cantidad.value);
-        let nombre = eleccion.options[eleccion.selectedIndex].text;
-        let total = 0;
-
-        if (cant <= 0) return;
-
-        else if (cant <= 4) {
-            total = precio * cant;
-        } else {
-            let descuento = precio * cant * 0.1;
-            total = precio * cant - descuento;
-        }
-
-        let item = document.createElement("li");
-        item.textContent = cant + " x " + nombre + " = $" + total + " ";
-        lista.appendChild(item);
-        final.textContent="Total: ";
-
-        
-
-        let btnEliminar = document.createElement("button");
-        btnEliminar.textContent = "Eliminar";
-        item.appendChild(btnEliminar);
-
-        btnEliminar.addEventListener("click", function(){
-            lista.removeChild(item);
-            totalGeneral -= total;
-            final.textContent = "Sub Total: $" + totalGeneral.toFixed(2);
-
-            if (totalGeneral <= 0) {
-                ivaTexto.textContent = "IVA: $0.00";
-                precioIvaTexto.textContent = "Precio final: $0.00";
-            } else {
-                let ivaCalculado = totalGeneral * 0.16;
-                let totalConIva = totalGeneral + ivaCalculado;
-                if (precioIvaTexto.dataset.modo === "credito") {
-                    totalConIva = totalConIva * 1.02;
-                }
-                ivaTexto.textContent = "IVA (16%): $" + ivaCalculado.toFixed(2);
-                precioIvaTexto.textContent = "Precio final: $" + totalConIva.toFixed(2);
-            }
-        });
-
-        totalGeneral += total;
-        final.textContent = "Sub Total: $" + totalGeneral.toFixed(2);
-        cantidad.value = "";
-    });
-
-    btnContado.addEventListener("click", function(){
-        precioIvaTexto.dataset.modo = "contado";
-        metodoPagoElegido = "Contado";
-        if (totalGeneral <= 0) {
-            ivaTexto.textContent = "IVA: $0.00";
-            precioIvaTexto.textContent = "Precio final: $0.00";
-            return;
-        }
-        let ivaCalculado = totalGeneral * 0.16;
-        let totalConIva = totalGeneral + ivaCalculado;
-
-        ivaTexto.textContent = "IVA (16%): $" + ivaCalculado.toFixed(2);
-        precioIvaTexto.textContent = "Precio final: $" + totalConIva.toFixed(2);
-    });
-
-    // =========================================================
-    // LÓGICA PARA ENVIAR A GOOGLE APPS SCRIPT (SIN ERROR DE CORS)
-    // =========================================================
-    let btnEnviar = document.getElementById("enviarPedido");
-    
-    // Aquí va tu URL real
+    // ===== Configuración =====
+    const IVA = 0.16;               // Pon 0 si no quieres cobrar/mostrar IVA
+    const MAYOREO_DESDE = 5;        // piezas de la misma flor para el descuento
+    const MAYOREO_DESCUENTO = 0.10; // 10%
+    const WHATSAPP = '523121416216';
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyyyoCbz-bc0PIxo13QH8s8XfWUNlMmhffjI6FnhTVGu11nJ084W_mHL7EJnnB6lnfO/exec';
 
-    btnEnviar.addEventListener("click", function() {
-        let nombreCliente = document.getElementById("nombreCliente").value.trim();
-        if (nombreCliente === "") {
-            alert("Por favor, escribe tu nombre.");
-            return;
-        }
+    const $ = id => document.getElementById(id);
+    const dinero = n => '$' + n.toFixed(2);
 
-        let items = lista.getElementsByTagName("li");
-        if (items.length === 0) {
-            alert("Tu carrito está vacío. Agrega algo primero.");
-            return;
-        }
+    let carrito = []; // { id, nombre, precio, cant }
 
-        if (metodoPagoElegido === "") {
-            alert("Por favor, selecciona una forma de pago (Pagar al contado).");
-            return;
-        }
+    function totalLinea(precio, cant) {
+        const bruto = precio * cant;
+        return cant >= MAYOREO_DESDE ? bruto * (1 - MAYOREO_DESCUENTO) : bruto;
+    }
 
-        let pedidoTexto = "";
-        for (let i = 0; i < items.length; i++) {
-            let textoLimpio = items[i].textContent.replace("Eliminar", "").trim();
-            pedidoTexto += textoLimpio + " | ";
-        }
+    // ===== Controles en cada tarjeta =====
+    document.querySelectorAll('.tarjeta[data-id]').forEach(tarjeta => {
+        let cant = 1;
+        const unidad = tarjeta.dataset.unidad || 'pza';
+        const ctrl = document.createElement('div');
+        ctrl.className = 'ctrl';
+        ctrl.innerHTML =
+            '<div class="stepper">' +
+              '<button type="button" class="menos" aria-label="Quitar uno">–</button>' +
+              '<span class="n">1</span>' +
+              '<button type="button" class="mas" aria-label="Agregar uno">+</button>' +
+            '</div>' +
+            '<button type="button" class="btn-card">🛒 Agregar</button>' +
+            '<span class="unidad">' + unidad + '</span>';
+        tarjeta.appendChild(ctrl);
 
-        let textoPrecioFinal = precioIvaTexto.textContent;
-        let totalFinal = Number(textoPrecioFinal.split("$")[1]);
+        const n = ctrl.querySelector('.n');
+        ctrl.querySelector('.menos').addEventListener('click', () => { if (cant > 1) { cant--; n.textContent = cant; } });
+        ctrl.querySelector('.mas').addEventListener('click', () => { cant++; n.textContent = cant; });
 
-        if (isNaN(totalFinal) || totalFinal === 0) {
-            alert("Por favor, calcula el total antes de enviar.");
-            return;
-        }
-
-        let datosEnviar = {
-            Nombre: nombreCliente,
-            Pedido: pedidoTexto,
-            Total: totalFinal,
-            Pago: metodoPagoElegido
-        };
-
-        btnEnviar.textContent = "Enviando...";
-        btnEnviar.disabled = true;
-
-        // AQUÍ ESTÁ LA MAGIA PARA EVITAR EL ERROR DE CORS
-        fetch(SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors', // <--- ESTO ES LO QUE SOLUCIONA EL ERROR
-            headers: {
-                'Content-Type': 'text/plain'
-            },
-            body: JSON.stringify(datosEnviar)
-        })
-        .then(() => {
-            // Como usamos 'no-cors', no podemos leer la respuesta de Google.
-            // Asumimos que se envió bien si no saltó un error de red.
-            alert("¡Muchas gracias " + nombreCliente + "! Tu pedido ha sido guardado. Favor de comunicarse al numero de WhatsApp al final de la pagina para confirmar fecha de entrega");
-            location.reload();
-        })
-        .catch(error => {
-            console.error("Error al enviar:", error);
-            alert("Hubo un error al enviar el pedido. Revisa tu conexión.");
-            btnEnviar.textContent = "✅ Enviar Pedido";
-            btnEnviar.disabled = false;
+        const btn = ctrl.querySelector('.btn-card');
+        btn.addEventListener('click', () => {
+            agregar(tarjeta.dataset.id, tarjeta.dataset.nombre, Number(tarjeta.dataset.precio), cant);
+            cant = 1; n.textContent = 1;
+            btn.textContent = '✅ Agregado';
+            btn.classList.add('ok');
+            setTimeout(() => { btn.textContent = '🛒 Agregar'; btn.classList.remove('ok'); }, 1200);
         });
     });
-    </script>
-</body>
-</html>
+
+    function agregar(id, nombre, precio, cant) {
+        const existente = carrito.find(p => p.id === id);
+        if (existente) existente.cant += cant;
+        else carrito.push({ id, nombre, precio, cant });
+        render();
+    }
+
+    function quitar(id) {
+        carrito = carrito.filter(p => p.id !== id);
+        render();
+    }
+
+    function calcular() {
+        const sub = carrito.reduce((s, p) => s + totalLinea(p.precio, p.cant), 0);
+        const iva = sub * IVA;
+        return { sub, iva, total: sub + iva };
+    }
+
+    function render() {
+        const lista = $('lista');
+        lista.innerHTML = '';
+        if (carrito.length === 0) {
+            const vacio = document.createElement('li');
+            vacio.className = 'vacio';
+            vacio.textContent = 'Aún no agregas nada. Elige tus flores arriba 🌸';
+            lista.appendChild(vacio);
+        }
+        let hayDescuento = false;
+        carrito.forEach(p => {
+            const li = document.createElement('li');
+            const t = totalLinea(p.precio, p.cant);
+            if (p.cant >= MAYOREO_DESDE) hayDescuento = true;
+            const txt = document.createElement('span');
+            txt.textContent = p.cant + ' x ' + p.nombre + ' = ' + dinero(t) + (p.cant >= MAYOREO_DESDE ? ' (−10%)' : '');
+            const del = document.createElement('button');
+            del.type = 'button';
+            del.textContent = 'Eliminar';
+            del.addEventListener('click', () => quitar(p.id));
+            li.append(txt, del);
+            lista.appendChild(li);
+        });
+
+        const { sub, iva, total } = calcular();
+        $('final').textContent = 'Sub Total: ' + dinero(sub);
+        $('iva').textContent = 'IVA (' + Math.round(IVA * 100) + '%): ' + dinero(iva);
+        $('iva').style.display = IVA > 0 ? '' : 'none';
+        $('precio_IVA').textContent = 'Total: ' + dinero(total);
+        $('msgDescuento').textContent = hayDescuento ? '🎁 Descuento de mayoreo aplicado' : '';
+
+        const piezas = carrito.reduce((s, p) => s + p.cant, 0);
+        $('barraPiezas').textContent = piezas;
+        $('barraTotal').textContent = dinero(total);
+        actualizarBarra();
+    }
+
+    // ===== Barra flotante (se oculta si el carrito está vacío o ya estás en el formulario) =====
+    let pedidoVisible = false;
+    function actualizarBarra() {
+        $('barra').hidden = carrito.length === 0 || pedidoVisible;
+    }
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            pedidoVisible = entries[0].isIntersecting;
+            actualizarBarra();
+        }, { threshold: 0.15 }).observe($('pedido'));
+    }
+    $('verPedido').addEventListener('click', () => $('pedido').scrollIntoView({ behavior: 'smooth' }));
+
+    // ===== Formulario =====
+    $('entrega').addEventListener('change', () => {
+        $('bloqueDireccion').style.display = $('entrega').value === 'Envío a domicilio' ? '' : 'none';
+    });
+    $('fecha').min = new Date().toLocaleDateString('en-CA');
+
+    function mostrarError(msg) {
+        const e = $('error');
+        e.textContent = msg;
+        e.style.display = 'block';
+        e.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    $('enviarPedido').addEventListener('click', function () {
+        $('error').style.display = 'none';
+        const nombre = $('nombreCliente').value.trim();
+        const tel = $('telefono').value.trim();
+        const entrega = $('entrega').value;
+        const direccion = $('direccion').value.trim();
+        const fecha = $('fecha').value;
+        const notas = $('notas').value.trim();
+        const pago = $('pago').value;
+
+        if (carrito.length === 0) return mostrarError('Tu carrito está vacío. Agrega alguna flor primero.');
+        if (!nombre) return mostrarError('Por favor, escribe tu nombre.');
+        if (tel.replace(/\D/g, '').length < 10) return mostrarError('Escribe un teléfono de 10 dígitos para poder confirmarte.');
+        if (entrega === 'Envío a domicilio' && !direccion) return mostrarError('Escribe la dirección de entrega.');
+        if (!fecha) return mostrarError('Dinos para qué fecha lo necesitas.');
+        if (!pago) return mostrarError('Elige una forma de pago.');
+
+        const datos = {
+            Nombre: nombre, Telefono: tel, Entrega: entrega, Direccion: direccion,
+            FechaEntrega: fecha, Notas: notas, Pago: pago,
+            // Solo mandamos qué y cuántos: el precio y el total los calcula el script (no se pueden alterar desde la página)
+            items: carrito.map(p => ({ id: p.id, cant: p.cant }))
+        };
+
+        const btn = this;
+        btn.textContent = pago === 'Tarjeta' ? 'Preparando pago seguro...' : 'Enviando...';
+        btn.disabled = true;
+
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(datos)
+        })
+        .then(r => r.json())
+        .then(res => {
+            if (!res.ok) throw new Error(res.error || 'Error');
+            if (res.url) {
+                btn.textContent = 'Abriendo Mercado Pago...';
+                window.location.href = res.url;
+                return;
+            }
+            const msg = '¡Hola! Soy ' + nombre + '. Acabo de hacer un pedido en la página (ref. ' + res.ref + '):\n' +
+                res.resumen.join('\n') + '\nTotal: ' + dinero(res.total) +
+                '\n' + entrega + (entrega === 'Envío a domicilio' ? ': ' + direccion : '') +
+                '\nPara el: ' + fecha + '\nPago: ' + pago + (notas ? '\nNotas: ' + notas : '');
+            mostrarGracias('🌸 ¡Gracias, ' + nombre + '!',
+                'Recibimos tu pedido. Para confirmar la fecha de entrega, mándanos tu resumen por WhatsApp.', msg);
+        })
+        .catch(err => {
+            console.error('Error al enviar:', err);
+            mostrarError(err.message && err.message.length > 12 ? err.message
+                : 'Hubo un error al enviar el pedido. Revisa tu conexión e inténtalo de nuevo.');
+            btn.textContent = '✅ Enviar Pedido';
+            btn.disabled = false;
+        });
+    });
+
+    function mostrarGracias(titulo, texto, mensajeWA) {
+        $('graciasTitulo').textContent = titulo;
+        $('graciasTexto').textContent = texto;
+        $('graciasWA').href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(mensajeWA);
+        $('pedido').style.display = 'none';
+        $('gracias').style.display = 'block';
+        $('barra').hidden = true;
+        $('gracias').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    $('pago').addEventListener('change', () => {
+        $('notaTarjeta').style.display = $('pago').value === 'Tarjeta' ? '' : 'none';
+    });
+
+    // ===== Cuando el cliente regresa de Mercado Pago =====
+    (function retornoDePago() {
+        const q = new URLSearchParams(location.search);
+        const resultado = q.get('pago'), ref = q.get('ref');
+        if (!resultado || !ref) return;
+        const wa = 'Hola, tengo una duda sobre mi pedido ' + ref;
+
+        if (resultado === 'error') {
+            mostrarGracias('El pago no se completó',
+                'No se hizo ningún cargo. Tu pedido quedó guardado: puedes escribirnos para pagarlo de otra forma.', wa);
+            return;
+        }
+        mostrarGracias('Revisando tu pago...', 'Un momento, estamos confirmando con Mercado Pago.', wa);
+        let intentos = 0;
+        (function revisar() {
+            fetch(SCRIPT_URL + '?action=estado&ref=' + encodeURIComponent(ref))
+                .then(r => r.json())
+                .then(res => {
+                    if (res.estado === 'Pagado') {
+                        mostrarGracias('✅ ¡Pago recibido! Gracias 🌸',
+                            'Tu pedido ' + ref + ' está pagado. Escríbenos por WhatsApp para confirmar la fecha de entrega.', wa);
+                    } else if (++intentos < 4) {
+                        setTimeout(revisar, 3000);
+                    } else {
+                        mostrarGracias('⏳ Tu pago está en revisión',
+                            'Mercado Pago aún no lo confirma (con OXXO o transferencia puede tardar). Te avisaremos por WhatsApp. Ref. ' + ref, wa);
+                    }
+                })
+                .catch(() => mostrarGracias('Recibimos tu pedido',
+                    'No pudimos revisar el pago en este momento.
