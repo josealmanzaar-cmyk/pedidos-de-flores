@@ -18,10 +18,10 @@
     <style>
         /* ===== VARIABLES DE DISEÑO PREMIUM ===== */
         :root {
-            --primary-color: #2c3e50; /* Azul oscuro elegante */
-            --accent-color: #d4af37;  /* Dorado */
-            --green-color: #556b2f;   /* Verde oliva para el toque floral */
-            --bg-color: #faf9f6;      /* Blanco crema */
+            --primary-color: #2c3e50;
+            --accent-color: #d4af37;
+            --green-color: #556b2f;
+            --bg-color: #faf9f6;
             --card-bg: #ffffff;
             --text-color: #333333;
             --text-light: #666666;
@@ -73,11 +73,7 @@
             padding: 80px 20px 40px;
             background: linear-gradient(180deg, #f4f1ea 0%, var(--bg-color) 100%);
         }
-        .titulo h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
+        .titulo h1 { font-size: 3rem; margin-bottom: 15px; letter-spacing: -0.5px; }
         .titulo h3 {
             font-family: var(--font-body);
             font-weight: 300;
@@ -87,400 +83,195 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        .titulo p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--text-light);
-            font-size: 1.05rem;
-        }
+        .titulo p { max-width: 700px; margin: 0 auto; color: var(--text-light); font-size: 1.05rem; }
 
         /* ===== CONTENIDO ===== */
-        .contenido {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 100px;
-        }
+        .contenido { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px; }
 
         /* ===== CÓMO PEDIR (PASOS) ===== */
         .como-pedir {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            list-style: none;
-            margin: 40px 0 60px;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; gap: 30px; list-style: none;
+            margin: 40px 0 60px; flex-wrap: wrap;
         }
-        .como-pedir li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
+        .como-pedir li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 600; color: var(--primary-color); }
         .como-pedir b {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-            height: 35px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+            display: flex; align-items: center; justify-content: center;
+            width: 35px; height: 35px; background-color: var(--accent-color); color: white;
+            border-radius: 50%; font-size: 1.1rem; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
         }
 
-        /* ===== BANDA DE CATEGORÍA ===== */
-        .banda {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        /* ===== BANDA DE CATEGORÍA Y ETIQUETA DESLIZABLE ===== */
+        .banda { text-align: center; font-size: 2.5rem; margin-bottom: 20px; }
+        
+        .descuento-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
         }
-        .aviso-mayoreo {
-            text-align: center;
-            color: var(--green-color);
-            background: #e8f0e3;
-            display: inline-block;
-            padding: 8px 20px;
+
+        .descuento-tag {
+            display: flex;
+            align-items: center;
+            background: #e8f0e3; /* Fondo verde claro */
             border-radius: 30px;
-            margin: 0 auto 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 6px;
+            max-width: 170px; /* Ancho inicial cerrado */
+            overflow: hidden;
+            border: 1px solid transparent;
+            box-shadow: 0 4px 15px rgba(85, 107, 47, 0.1);
+        }
+
+        /* Clase que se activa con el clic */
+        .descuento-tag.active {
+            max-width: 450px; /* Ancho abierto para mostrar el texto */
+            border-color: var(--green-color);
+            background: white;
+            box-shadow: 0 8px 25px rgba(85, 107, 47, 0.2);
+        }
+
+        .descuento-tab {
+            background: var(--green-color);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
             font-size: 0.9rem;
-            left: 50%;
-            position: relative;
-            transform: translateX(-50%);
             font-weight: 600;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .descuento-text {
+            padding: 0 15px 0 20px;
+            font-size: 0.9rem;
+            color: var(--green-color);
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease 0.1s; /* Pequeño retraso para que aparezca al deslizar */
+        }
+
+        .descuento-tag.active .descuento-text {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         /* ===== GRID DE TARJETAS ===== */
-        .grid-productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
 
         .tarjeta {
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            background: var(--card-bg); border-radius: 20px; overflow: hidden;
+            box-shadow: var(--shadow); transition: var(--transition);
+            display: flex; flex-direction: column; position: relative;
         }
-        .tarjeta:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-10px);
-        }
+        .tarjeta:hover { box-shadow: var(--shadow-hover); transform: translateY(-10px); }
 
-        .foto {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        .tarjeta:hover .foto {
-            transform: scale(1.05);
-        }
+        .foto { width: 100%; height: 350px; object-fit: cover; transition: transform 0.6s ease; }
+        .tarjeta:hover .foto { transform: scale(1.05); }
 
-        .tarjeta-contenido {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
+        .tarjeta-contenido { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
 
-        .nombre {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
+        .nombre { font-size: 1.8rem; margin-bottom: 10px; }
         .precio {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            display: block;
+            font-family: var(--font-body); font-weight: 600; font-size: 1.2rem;
+            color: var(--accent-color); margin-bottom: 15px; display: block;
         }
-        .descripcion {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
+        .descripcion { font-size: 0.9rem; color: var(--text-light); margin-bottom: 25px; flex-grow: 1; }
 
         /* ===== CONTROLES DE LA TARJETA ===== */
-        .ctrl {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-        .stepper {
-            display: flex;
-            align-items: center;
-            background: #f0f0f0;
-            border-radius: 30px;
-            overflow: hidden;
-        }
-        .stepper button {
-            background: none;
-            border: none;
-            width: 35px;
-            height: 35px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: var(--primary-color);
-            transition: background 0.2s;
-        }
+        .ctrl { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; }
+        .stepper { display: flex; align-items: center; background: #f0f0f0; border-radius: 30px; overflow: hidden; }
+        .stepper button { background: none; border: none; width: 35px; height: 35px; font-size: 1.2rem; cursor: pointer; color: var(--primary-color); transition: background 0.2s; }
         .stepper button:hover { background: #e0e0e0; }
-        .stepper .n {
-            width: 30px;
-            text-align: center;
-            font-weight: 600;
-        }
+        .stepper .n { width: 30px; text-align: center; font-weight: 600; }
+        
         .btn-card {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-family: var(--font-body);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            flex-grow: 1;
-            margin: 0 15px;
+            background-color: var(--primary-color); color: white; border: none;
+            padding: 10px 20px; border-radius: 30px; font-family: var(--font-body);
+            font-weight: 600; cursor: pointer; transition: var(--transition);
+            flex-grow: 1; margin: 0 15px;
         }
         .btn-card:hover { background-color: var(--green-color); }
         .btn-card.ok { background-color: #4CAF50; }
-        
-        .unidad {
-            font-size: 0.8rem;
-            color: #999;
-            display: none; /* Oculto por diseño, se puede mostrar si se requiere */
-        }
 
         /* ===== FORMULARIO DE PEDIDO ===== */
         .pedido {
-            background: white;
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-top: 80px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            background: white; padding: 50px; border-radius: 20px;
+            box-shadow: var(--shadow); margin-top: 80px; max-width: 800px; margin-left: auto; margin-right: auto;
         }
-        .pedido h3 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-        }
+        .pedido h3 { text-align: center; font-size: 2.2rem; margin-bottom: 30px; }
 
-        .lista {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        .lista li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px dashed #eee;
-        }
-        .lista li.vacio {
-            justify-content: center;
-            color: #999;
-            font-style: italic;
-            border: none;
-        }
-        .lista li button {
-            background: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: var(--transition);
-        }
+        .lista { list-style: none; margin-bottom: 30px; }
+        .lista li { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px dashed #eee; }
+        .lista li.vacio { justify-content: center; color: #999; font-style: italic; border: none; }
+        .lista li button { background: #ff4d4d; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: var(--transition); }
         .lista li button:hover { background: #cc0000; }
 
-        .fila {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
+        .fila { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.1rem; color: var(--text-light); }
         .fila-final {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            border-top: 2px solid var(--primary-color);
-            padding-top: 15px;
-            margin-top: 15px;
-            margin-bottom: 30px;
+            font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary-color);
+            border-top: 2px solid var(--primary-color); padding-top: 15px; margin-top: 15px; margin-bottom: 30px;
         }
-        .fila-pequena {
-            font-size: 0.85rem;
-            color: var(--green-color);
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
+        .fila-pequena { font-size: 0.85rem; color: var(--green-color); text-align: center; margin-bottom: 20px; font-weight: 600; }
 
-        .etiqueta {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            margin-top: 20px;
-            color: var(--primary-color);
-        }
+        .etiqueta { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; margin-top: 20px; color: var(--primary-color); }
         .campo {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            transition: var(--transition);
-            background-color: #fafafa;
+            width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px;
+            font-family: var(--font-body); font-size: 1rem; transition: var(--transition); background-color: #fafafa;
         }
-        .campo:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-            background-color: white;
-        }
+        .campo:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2); background-color: white; }
 
-        .error {
-            background: #ffebee;
-            color: #c62828;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            display: none;
-            text-align: center;
-            font-weight: 600;
-        }
+        .error { background: #ffebee; color: #c62828; padding: 15px; border-radius: 10px; margin-top: 20px; display: none; text-align: center; font-weight: 600; }
 
         /* ===== BOTÓN ENVIAR (WHATSAPP) ===== */
         #enviarPedido {
-            background-color: #25D366; /* Color WhatsApp */
-            color: white;
-            border: none;
-            padding: 20px;
-            border-radius: 10px;
-            font-family: var(--font-body);
-            font-size: 1.2rem;
-            font-weight: 600;
-            width: 100%;
-            margin-top: 30px;
-            cursor: pointer;
-            transition: var(--transition);
+            background-color: #25D366; color: white; border: none; padding: 20px;
+            border-radius: 10px; font-family: var(--font-body); font-size: 1.2rem; font-weight: 600;
+            width: 100%; margin-top: 30px; cursor: pointer; transition: var(--transition);
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
         }
-        #enviarPedido:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
-        }
+        #enviarPedido:hover { background-color: #128C7E; transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3); }
 
         /* ===== PANTALLA DE GRACIAS ===== */
-        .gracias {
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin-top: 50px;
-            display: none;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
+        .gracias { text-align: center; padding: 60px 20px; background: white; border-radius: 20px; box-shadow: var(--shadow); margin-top: 50px; display: none; animation: fadeInUp 0.8s ease-out forwards; }
         .gracias h3 { font-size: 2.5rem; margin-bottom: 20px; color: var(--green-color); }
         .gracias p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
 
         /* ===== BOTÓN FLOTANTE DE WHATSAPP ===== */
         .wa-flotante {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            text-decoration: none;
-            animation: float 3s ease-in-out infinite;
-            transition: var(--transition);
+            position: fixed; bottom: 100px; right: 30px; background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 1000;
+            text-decoration: none; animation: float 3s ease-in-out infinite; transition: var(--transition);
         }
-        .wa-flotante:hover {
-            transform: scale(1.1);
-            animation: none;
-            background-color: #128C7E;
-        }
+        .wa-flotante:hover { transform: scale(1.1); animation: none; background-color: #128C7E; }
 
         /* ===== BARRA FLOTANTE DE CARRITO ===== */
         .barra {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(44, 62, 80, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 999;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px); color: white; padding: 15px 30px; display: flex;
+            justify-content: space-between; align-items: center; z-index: 999; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            transform: translateY(100%); transition: transform 0.3s ease;
         }
-        .barra:not([hidden]) {
-            transform: translateY(0);
-        }
+        .barra:not([hidden]) { transform: translateY(0); }
         .barra div { font-size: 1.1rem; }
         .barra button {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+            background: var(--accent-color); color: white; border: none; padding: 10px 25px;
+            border-radius: 30px; font-weight: 600; cursor: pointer; transition: var(--transition);
         }
         .barra button:hover { background: #b5952f; }
 
         /* ===== FOOTER ===== */
-        .footer {
-            background: var(--primary-color);
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            padding: 60px 20px 100px; /* Espacio extra abajo por la barra */
-            margin-top: 80px;
-        }
+        .footer { background: var(--primary-color); color: rgba(255,255,255,0.7); text-align: center; padding: 60px 20px 100px; margin-top: 80px; }
         .datos p { margin-bottom: 10px; }
         .redes { margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .redes a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
+        .redes a { color: var(--accent-color); text-decoration: none; font-weight: 600; transition: var(--transition); }
         .redes a:hover { color: white; }
         .derechos { margin-top: 40px; font-size: 0.8rem; opacity: 0.5; }
 
@@ -491,6 +282,11 @@
             .fila-final { font-size: 1.5rem; }
             .barra { flex-direction: column; gap: 10px; text-align: center; }
             .barra button { width: 100%; }
+            
+            /* Ajuste de la etiqueta en móviles */
+            .descuento-tag { max-width: 160px; }
+            .descuento-tag.active { max-width: 95%; }
+            .descuento-text { font-size: 0.8rem; white-space: normal; line-height: 1.2; text-align: left;}
         }
     </style>
 </head>
@@ -510,7 +306,18 @@
         </ol>
 
         <h2 class="banda reveal">Nuestras Creaciones</h2>
-        <p class="aviso-mayoreo reveal">🎁 5 piezas o más de la misma flor: <b>10% de descuento</b></p>
+        
+        <!-- ETIQUETA DESLIZABLE DE DESCUENTO -->
+        <div class="descuento-container reveal">
+            <div class="descuento-tag" id="tagDescuento">
+                <div class="descuento-tab">
+                    🎁 Descuento
+                </div>
+                <div class="descuento-text">
+                    5 piezas o más de la misma flor: <b>10% off</b>
+                </div>
+            </div>
+        </div>
 
         <div class="grid-productos">
             <!-- TARJETA 1 -->
@@ -572,7 +379,7 @@
                     <p class="descripcion">Centro de mesa vibrante con 5 flores tipo gerbera gigantes en foami. Colores vivos y hojas verdes de gran tamaño. Base pequeña ideal para mesas o escritorios.</p>
                 </div>
             </div>
-  </div>
+        </div>
 
         <!-- FORMULARIO -->
         <div class="pedido reveal" id="pedido">
@@ -582,7 +389,35 @@
             <ul id="lista" class="lista"></ul>
 
             <p id="final" class="fila">Sub Total: $0.00</p>
-            <p id="iva" class="fila">IVA (16%): $0.00</p>
+            <!-- Se eliminó la línea del IVA en el HTML -->
+            <p id="precio_IVA" class="fila fila-final">Total: $0.00</p>
+            <p id="msgDescuento" class="fila-pequena"></p>
+
+            <h3>Tus datos</h3>
+
+            <p class="etiqueta">Tu nombre</p>
+            <input id="nombreCliente" class="campo" type="text" autocomplete="name" placeholder="Escribe tu nombre completo">
+
+            <p class="etiqueta">Tu teléfono / WhatsApp</p>
+            <input id="telefono" class="campo" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ej. 312 123 4567">
+
+            <p class="etiqueta">¿Cómo lo quieres?</p>
+            <select id="entrega" class="campo">
+                <option value="Recoger en tienda">Paso a recogerlo</option>
+                <option value="Envío a domicilio">Envío a domicilio</option>
+            </select>
+
+       </div>
+
+        <!-- FORMULARIO -->
+        <div class="pedido reveal" id="pedido">
+            <h3>Arma tu pedido</h3>
+
+            <h3>Tu carrito</h3>
+            <ul id="lista" class="lista"></ul>
+
+            <p id="final" class="fila">Sub Total: $0.00</p>
+            <!-- Se eliminó la línea del IVA en el HTML -->
             <p id="precio_IVA" class="fila fila-final">Total: $0.00</p>
             <p id="msgDescuento" class="fila-pequena"></p>
 
@@ -655,7 +490,7 @@
 
     <script>
     // ===== Configuración =====
-    const IVA = 0.16;               
+    const IVA = 0; // ¡CAMBIO AQUÍ! Lo pusimos en 0 para que no cobre ni muestre nada de IVA.               
     const MAYOREO_DESDE = 5;        
     const MAYOREO_DESCUENTO = 0.10; 
     const WHATSAPP = '523121416216'; 
@@ -664,6 +499,11 @@
     const dinero = n => '$' + n.toFixed(2);
 
     let carrito = []; 
+
+    // ===== Interacción de la Etiqueta de Descuento =====
+    document.getElementById('tagDescuento').addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
 
     // ===== Animaciones al hacer Scroll (Reveal) =====
     function reveal() {
@@ -678,7 +518,7 @@
         }
     }
     window.addEventListener("scroll", reveal);
-    reveal(); // Ejecutar al cargar por si ya están visibles
+    reveal(); 
 
     // ===== Lógica de Productos =====
     function totalLinea(precio, cant) {
@@ -757,8 +597,7 @@
 
         const { sub, iva, total } = calcular();
         $('final').textContent = 'Sub Total: ' + dinero(sub);
-        $('iva').textContent = 'IVA (' + Math.round(IVA * 100) + '%): ' + dinero(iva);
-        $('iva').style.display = IVA > 0 ? '' : 'none';
+        // La línea del IVA se oculta automáticamente porque IVA = 0
         $('precio_IVA').textContent = 'Total: ' + dinero(total);
         $('msgDescuento').textContent = hayDescuento ? '🎁 Descuento de mayoreo aplicado' : '';
 
@@ -822,7 +661,7 @@
             mensajeWA += `▪️ ${p.cant} x ${p.nombre} = ${dinero(subtotal)}${descStr}\n`;
         });
         mensajeWA += `\n*Subtotal:* ${dinero(sub)}\n`;
-        if (IVA > 0) mensajeWA += `*IVA (${Math.round(IVA * 100)}%):* ${dinero(iva)}\n`;
+        // El IVA ya no se agrega al mensaje porque IVA = 0
         mensajeWA += `*TOTAL A PAGAR:* ${dinero(total)}\n\n`;
 
         mensajeWA += `*--- 📋 MIS DATOS ---*\n`;
