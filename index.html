@@ -297,8 +297,7 @@
         <h3>Flores de foami en Colima</h3>
         <p>Hacer flores de foami es mucho más que una manualidad: es plasmar tus ideas y emociones en cada pétalo. Cada diseño es único, hecho a mano y con cariño. Aquí encontrarás la flor que mejor hable por ti.</p>
     </div>
-
-    <div class="contenido">
+<div class="contenido">
         <ol class="como-pedir reveal">
             <li><b>1</b> Elige tus flores</li>
             <li><b>2</b> Llena tus datos</li>
@@ -598,8 +597,7 @@
         const { sub, iva, total } = calcular();
         $('final').textContent = 'Sub Total: ' + dinero(sub);
         // La línea del IVA se oculta automáticamente porque IVA = 0
-        $('precio_IVA').textContent = 'Total: ' + dinero(total);
-        $('msgDescuento').textContent = hayDescuento ? '🎁 Descuento de mayoreo aplicado' : '';
+        $('precio_IVA').textContent = 'Total$('msgDescuento').textContent = hayDescuento ? '🎁 Descuento de mayoreo aplicado' : '';
 
         const piezas = carrito.reduce((s, p) => s + p.cant, 0);
         $('barraPiezas').textContent = piezas;
