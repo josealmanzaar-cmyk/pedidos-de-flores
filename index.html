@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MI BELLA CREACIÓN | Flores de foami colima</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Librería de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <!-- AQUÍ INICIO EL ENCABEZADO-->
@@ -32,13 +32,64 @@
     <!-- AQUÍ INICIAN LOS PRODUCTOS-->
     <main>
         <section id="catalogo">
-            <p class="aviso_catalogo" style="text-align:center; padding:30px;">Cargando catálogo...</p>
+            
+            <!-- PEONIA -->
+            <article>
+                <img src="gardenia.jpg" alt="gerbera">
+                <h3 class="nm_flor">Peonia</h3>
+                <p class="precio" data-precio="40">$40 c/u</p>
+                <p>Espectacular peonía artesanal en foami blanco puro. Centro tupido de pétalos rizados, matiz verde tierno en el corazón y hojas verdes con nervaduras marcadas.</p>
+                <button class="quitar">-</button><span class="cantidad">0</span><button class="agregar">+</button><button class="pal_carrito ver_car">Agregar al carrito</button>
+            </article>
+                
+            <!-- OBELISCO -->
+            <article>
+                <img src="obelisco.jpg" alt="obelisco">
+                <h3 class="nm_flor">Obelisco</h3>
+                <p class="precio" data-precio="150">$150 c/u</p>
+                <p>Composición de mesa con botones y flores de obelisco rojo en foami. Pétalos estilizados y cálices verdes, presentado en florero de cristal con listón de yute.</p>
+                <button class="quitar">-</button><span class="cantidad">0</span><button class="agregar">+</button><button class="pal_carrito ver_car">Agregar al carrito</button>
+            </article>
+                
+            <!-- Rosa gigante -->
+            <article>
+                <img src="Rosota.jpg" alt="Rosa gigante">
+                <h3 class="nm_flor">Rosa gigante</h3>
+                <p class="precio" data-precio="800">$800 c/u</p>
+                <p>Rosa gigante de foami rojo intenso con pétalos voluminosos y curvados. Montada sobre tallo erguido de gran altura con hojas anchas, asentada en base decorativa.</p>
+                <button class="quitar">-</button><span class="cantidad">0</span><button class="agregar">+</button><button class="pal_carrito ver_car">Agregar al carrito</button>
+            </article>
+                
+            <!-- Girasol gigante-->
+            <article>
+                <img src="girasolote.jpg" alt="girasol gigante">
+                <h3 class="nm_flor">Girasol gigante</h3>
+                <p class="precio" data-precio="800">$800 c/u</p>
+                <p>Girasol de gran formato en foami amarillo. Múltiples capas de pétalos finos modelados a mano y centro oscuro texturizado. Tallo firme ideal para eventos.</p>
+                <button class="quitar">-</button><span class="cantidad">0</span><button class="agregar">+</button> <button class="pal_carrito ver_car">Agregar al carrito</button>   
+            </article>
+                
+            <!-- Arreglo floral -->
+            <article>
+                <img src="arreglo.jpg" alt="Arreglo floral">
+                <h3 class="nm_flor">Arreglo floral</h3>
+                <p class="precio" data-precio="220">$220 c/u</p>
+                <p>Dos rosas rojas de gran tamaño, tulipanes en tonos blanco, rojo y rosa, detalles amarillos y baby's breath. Montado en maceta rectangular terracota.</p>
+                <button class="quitar">-</button><span class="cantidad">0</span><button class="agregar">+</button><button class="pal_carrito ver_car">Agregar al carrito</button>
+            </article>
+                
+            <!-- Gerberas -->
+            <article>
+                <img src="gerberas.jpg" alt="Arreglo floral">
+                <h3 class="nm_flor">Arreglo de gerberas</h3>
+                <p class="precio" data-precio="35">$35(por cada flor)</p>
+                <p>Centro de mesa vibrante con 5 flores tipo gerbera gigantes en foami. Colores vivos y hojas verdes de gran tamaño. Base pequeña ideal para mesas o escritorios.</p>
+                <button class="quitar">-</button><span class="cantidad">0</span><button class="agregar">+</button><button class="pal_carrito ver_car">Agregar al carrito</button>
+            </article>
         </section>
         
         <section>
-            
         </section>
-        
         
         <!-- formulario de compra-->
         <div class="formulario" id="pedido">
@@ -48,7 +99,6 @@
             <ul id="lista" class="lista"></ul>
 
             <p id="final" class="fila">Total: $0.00</p>
-            
             
             <h3>Tus datos</h3>
 
@@ -82,28 +132,25 @@
                 <option value="Transferencia">Transferencia</option>
             </select>
             <button class="btn-enviar">ENVIAR PEDIDO</button>
-            </div>
-            <button class="wht"><a href="https://wa.me/523122982723"><img src="wht.jpeg" alt="WhatsApp"></a></button>
+        </div>
+        <button class="wht"><a href="https://wa.me/523122982723"><img src="wht.jpeg" alt="WhatsApp"></a></button>
     </main>
-    
     
     <!-- Barra del carrito de compras -->
     <div class="barra_carrito">
-    <p>🛒 <span id="piezas"></span> pza · $<span id="total">0.00</span></p>
-    <button class="pedido"><a href="#pedido" style="text-decoration:none;">ver pedido</a></button>
-</div>
+        <p>🛒 <span id="piezas"></span> pza · $<span id="total">0.00</span></p>
+        <button class="pedido"><a href="#pedido" style="text-decoration:none;">ver pedido</a></button>
+    </div>
 
+    <footer style="text-align:center; padding:30px 15px; color:#666; font-size:0.9rem;">
+      <p><b>Mi Bella Creación - Flores de foami Colima</b></p>
+      <p>Hecho a mano con cariño en Colima, Col.</p>
+      <p>Pedidos por WhatsApp: 312 298 2723</p>
+      <p>© 2026 Mi Bella Creación</p>
+    </footer>
 
-<footer style="text-align:center; padding:30px 15px; color:#666; font-size:0.9rem;">
-  <p><b>Mi Bella Creación - Flores de foami Colima</b></p>
-  <p>Hecho a mano con cariño en Colima, Col.</p>
-  <p>Pedidos por WhatsApp: 312 298 2723</p>
-  <p>© 2026 Mi Bella Creación</p>
-</footer>
-
-     <!-- Aquí es el javascript-->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Primero la conexión y luego el script del carrito -->
     <script src="config.js"></script>
-    <script src="script.js" defer></script>
+    <script src="script1.0.js" defer></script>
 </body>
 </html>
