@@ -1,8 +1,8 @@
-// ==================== AJUSTES ====================
-const NUMERO_WHATSAPP = "523122982723";
-const ABRIR_WHATSAPP = true; // true = al guardar el pedido, abre WhatsApp con el resumen
 
-// ==================== ELEMENTOS ====================
+const NUMERO_WHATSAPP = "523122982723";
+const ABRIR_WHATSAPP = true; 
+
+
 const btn_agregar = document.querySelectorAll(".agregar");
 const cantidad = document.querySelectorAll(".cantidad");
 const btn_quitar = document.querySelectorAll(".quitar");
@@ -22,7 +22,6 @@ const inputFecha = document.getElementById("fecha");
 let suma_total = 0;
 piezas.textContent = "0";
 
-// ==================== CONTADOR + / - ====================
 btn_agregar.forEach(function (boton, i) {
     boton.addEventListener("click", function () {
         let numero = Number(cantidad[i].textContent);
@@ -39,7 +38,6 @@ btn_quitar.forEach(function (boton, i) {
     });
 });
 
-// ==================== AGREGAR AL CARRITO ====================
 ver_pedido.forEach(function (boton, i) {
     boton.addEventListener("click", function () {
         if (Number(cantidad[i].textContent) === 0) {
@@ -72,7 +70,6 @@ ver_pedido.forEach(function (boton, i) {
     });
 });
 
-// ==================== QUITAR DEL CARRITO (un solo listener en la lista) ====================
 lista.addEventListener("click", function (e) {
     if (e.target.classList.contains("quit")) {
         const li = e.target.closest("li");
@@ -99,15 +96,12 @@ function reiniciarCarrito() {
     div.classList.replace("visible", "barra_carrito");
 }
 
-// ==================== DIRECCIÓN SOLO SI ES ENVÍO ====================
 entrega.addEventListener("change", function () {
     bloqueDireccion.style.display = entrega.value === "Envío a domicilio" ? "block" : "none";
 });
 
-// No dejar elegir fechas pasadas
 inputFecha.min = new Date().toLocaleDateString("en-CA"); // formato AAAA-MM-DD
 
-// ==================== ENVIAR PEDIDO ====================
 btn_enviar.addEventListener("click", async function () {
     const items = lista.querySelectorAll("li");
     const nombre = document.getElementById("nombreCliente").value.trim();
@@ -118,14 +112,12 @@ btn_enviar.addEventListener("click", async function () {
     const notas = document.getElementById("notas").value.trim();
     const pago = document.getElementById("pago").value;
 
-    // --- Validaciones ---
     if (items.length === 0) { alert("Agrega al menos una flor al carrito."); return; }
     if (nombre === "") { alert("Escribe tu nombre."); return; }
     if (telefono.length < 10 || telefono.length > 15) { alert("Escribe un teléfono válido de 10 dígitos."); return; }
     if (tipoEntrega === "Envío a domicilio" && direccion === "") { alert("Escribe la dirección de entrega."); return; }
     if (pago === "") { alert("Elige la forma de pago."); return; }
 
-    // --- Armar la lista de productos (se guarda como JSON) ---
     const productos = [];
     items.forEach(function (li) {
         productos.push({
@@ -158,7 +150,6 @@ btn_enviar.addEventListener("click", async function () {
         return;
     }
 
-    // --- Resumen para WhatsApp (se arma ANTES de vaciar el carrito) ---
     let mensaje = "Hola, hice un pedido en la página:\n";
     productos.forEach(function (p) {
         mensaje += "- " + p.nombre + " x" + p.cantidad + " ($" + p.subtotal + ")\n";
@@ -170,7 +161,6 @@ btn_enviar.addEventListener("click", async function () {
     mensaje += "Pago: " + pago;
     if (notas) { mensaje += "\nNotas: " + notas; }
 
-    // --- Limpiar todo ---
     reiniciarCarrito();
     document.getElementById("nombreCliente").value = "";
     document.getElementById("telefono").value = "";
