@@ -1,0 +1,155 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --verde: #556b2f;
+    --rosa: #ff95d2;
+    --rosa-oscuro: #c2528f;
+    --dorado: #d4af37;
+    --fondo: #faf9f6;
+    --texto: #333;
+    --suave: #666;
+    --rojo: #c0392b;
+}
+
+[hidden] { display: none !important; }
+
+body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    padding-bottom: 40px;
+}
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.2rem; margin-bottom: 12px; }
+
+/* ===== Cajas (login y formulario) ===== */
+.caja {
+    background: #fff;
+    max-width: 420px;
+    margin: 30px auto;
+    padding: 24px 20px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.caja h1 { text-align: center; }
+.sub { text-align: center; color: var(--suave); margin-bottom: 20px; }
+
+label { display: block; font-weight: 600; margin: 12px 0 6px; font-size: 0.95rem; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: #fafafa;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: var(--verde); }
+
+.msg { text-align: center; margin-top: 10px; color: var(--rojo); min-height: 1.2em; }
+
+/* ===== Botones ===== */
+.btn {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    background: #eee;
+    color: var(--texto);
+    cursor: pointer;
+}
+.btn:active { opacity: 0.7; }
+.btn.principal { background: var(--verde); color: #fff; width: 100%; margin-top: 8px; }
+.btn.chico { padding: 8px 14px; font-size: 0.9rem; width: auto; margin: 0; }
+.btn.chico.principal { width: auto; }
+.btn.peligro { background: var(--rojo); color: #fff; }
+
+/* ===== Barra superior ===== */
+.barra_admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Pestañas ===== */
+.tabs { display: flex; gap: 8px; padding: 14px 16px 0; max-width: 700px; margin: 0 auto; }
+.tab {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #eee;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.tab.activa { background: var(--rosa); }
+
+main { max-width: 700px; margin: 0 auto; padding: 16px; }
+#btn_recargar { margin-bottom: 12px; }
+
+/* ===== Tarjetas de pedido ===== */
+.tarjeta {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+    border-left: 6px solid var(--dorado);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.tarjeta p { margin: 4px 0; word-break: break-word; }
+.tarjeta a { color: var(--verde); font-weight: 600; }
+.estado-en-proceso { border-left-color: #2980b9; }
+.estado-entregado  { border-left-color: #27ae60; }
+.estado-cancelado  { border-left-color: var(--rojo); opacity: 0.75; }
+
+.fila_top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.etiqueta_estado {
+    background: #f4f1ea;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.chico_txt { color: var(--suave); font-size: 0.85rem; }
+.notas { background: #fff8e1; padding: 8px 10px; border-radius: 8px; }
+.productos { margin: 10px 0 6px 20px; }
+.total { font-weight: 700; font-size: 1.15rem; margin-top: 6px; }
+
+.acciones { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+.acciones select { margin: 0; width: auto; flex: 1; padding: 8px 10px; }
+
+/* ===== Lista de flores ===== */
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #fff;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.info_flor { display: flex; flex-direction: column; gap: 4px; }
+.info_flor label { margin: 0; font-weight: 400; display: flex; align-items: center; gap: 6px; }
+.info_flor input[type="number"] { width: 110px; margin: 0; padding: 6px 10px; }
+.fila .acciones { margin-top: 0; }
+
+#form_flor { max-width: none; margin: 0 0 18px; }
