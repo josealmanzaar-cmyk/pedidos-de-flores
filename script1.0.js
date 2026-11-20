@@ -175,3 +175,24 @@ btn_enviar.addEventListener("click", async function () {
         window.location.href = "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(mensaje);
     }
 });
+// ===== Marcar flores no disponibles (según Supabase) =====
+async function aplicarDisponibilidad() {
+    const { data, error } = await db.from("flores").select("nombre, disponible");
+    if (error) return;
+
+    nm_flor.forEach(function (h3) {
+        const flor = data.find(function (f) {
+            return f.nombre.trim().toLowerCase() === h3.textContent.trim().toLowerCase();
+        });
+        if (flor && flor.disponible === false) {
+            const tarjeta = h3.closest("article");
+            tarjeta.querySelectorAll("button").forEach(function (b) { b.disabled = true; });
+            tarjeta.style.opacity = "0.5";
+            const aviso = document.createElement("p");
+            aviso.textContent = "❌ No disponible por ahora";
+            aviso.style.fontWeight = "bold";
+            tarjeta.append(aviso);
+        }
+    });
+}
+aplicarDisponibilidad();
