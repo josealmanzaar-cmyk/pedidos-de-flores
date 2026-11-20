@@ -1,8 +1,6 @@
-// ==================== AJUSTES ====================
 const NUMERO_WHATSAPP = "523122982723";
-const ABRIR_WHATSAPP = true; // true = al guardar el pedido, abre WhatsApp con el resumen
+const ABRIR_WHATSAPP = true;
 
-// ==================== ELEMENTOS ====================
 const catalogo = document.getElementById("catalogo");
 const div = document.querySelector(".barra_carrito");
 const piezas = document.getElementById("piezas");
@@ -17,15 +15,12 @@ const inputFecha = document.getElementById("fecha");
 let suma_total = 0;
 piezas.textContent = "0";
 
-// Ayudante para crear elementos: el("p", { textContent: "hola" })
 function el(tag, props) {
     const e = document.createElement(tag);
     Object.assign(e, props || {});
     return e;
 }
 
-// ==================== CATÁLOGO DESDE SUPABASE ====================
-// Cada flor se dibuja con el mismo HTML que tenías a mano, así que tu CSS no cambia.
 async function cargarCatalogo() {
     const { data, error } = await db.from("flores").select("*").order("id");
     catalogo.textContent = "";
@@ -44,7 +39,6 @@ async function cargarCatalogo() {
 function crearTarjeta(f) {
     const tarjeta = el("article");
 
-    // Solo nombres de archivo normales (sin rutas raras)
     if (f.imagen && /^[\w.\- ]+$/.test(f.imagen)) {
         tarjeta.append(el("img", { src: f.imagen, alt: f.nombre }));
     }
@@ -64,7 +58,6 @@ function crearTarjeta(f) {
 
     tarjeta.append(nombre, precio, descripcion, quitar, cantidad, agregar, alCarrito);
 
-    // Si en el admin la marcaste como no disponible
     if (f.disponible === false) {
         tarjeta.querySelectorAll("button").forEach(function (b) { b.disabled = true; });
         tarjeta.style.opacity = "0.5";
@@ -73,7 +66,6 @@ function crearTarjeta(f) {
     return tarjeta;
 }
 
-// ==================== BOTONES DEL CATÁLOGO (un solo listener) ====================
 catalogo.addEventListener("click", function (e) {
     const boton = e.target.closest("button");
     if (!boton || boton.disabled) return;
@@ -103,13 +95,11 @@ catalogo.addEventListener("click", function (e) {
     }
 });
 
-// ==================== CARRITO ====================
 function agregarAlCarrito(nombre, dinero, numero) {
     suma_total += dinero * numero;
     piezas.textContent = Number(piezas.textContent) + numero;
     div.classList.replace("barra_carrito", "visible");
 
-    // Cada línea del carrito guarda sus datos para poder restarlos o enviarlos
     const li = el("li", { className: "listo" });
     li.dataset.nombre = nombre;
     li.dataset.precio = dinero * numero;
@@ -147,33 +137,28 @@ function reiniciarCarrito() {
     div.classList.replace("visible", "barra_carrito");
 }
 
-// ==================== DIRECCIÓN SOLO SI ES ENVÍO ====================
 entrega.addEventListener("change", function () {
     bloqueDireccion.style.display = entrega.value === "Envío a domicilio" ? "block" : "none";
 });
 
-// No dejar elegir fechas pasadas
-inputFecha.min = new Date().toLocaleDateString("en-CA"); // formato AAAA-MM-DD
+inputFecha.min = new Date().toLocaleDateString("en-CA");
 
-// ==================== ENVIAR PEDIDO ====================
 btn_enviar.addEventListener("click", async function () {
     const items = lista.querySelectorAll("li");
     const nombre = document.getElementById("nombreCliente").value.trim();
-    const telefono = document.getElementById("telefono").value.replace(/\D/g, ""); // solo números
+    const telefono = document.getElementById("telefono").value.replace(/\D/g, "");
     const tipoEntrega = entrega.value;
     const direccion = document.getElementById("direccion").value.trim();
     const fecha = inputFecha.value;
     const notas = document.getElementById("notas").value.trim();
     const pago = document.getElementById("pago").value;
 
-    // --- Validaciones ---
     if (items.length === 0) { alert("Agrega al menos una flor al carrito."); return; }
     if (nombre === "") { alert("Escribe tu nombre."); return; }
     if (telefono.length < 10 || telefono.length > 15) { alert("Escribe un teléfono válido de 10 dígitos."); return; }
     if (tipoEntrega === "Envío a domicilio" && direccion === "") { alert("Escribe la dirección de entrega."); return; }
     if (pago === "") { alert("Elige la forma de pago."); return; }
 
-    // --- Armar la lista de productos (se guarda como JSON) ---
     const productos = [];
     items.forEach(function (li) {
         productos.push({
@@ -206,7 +191,6 @@ btn_enviar.addEventListener("click", async function () {
         return;
     }
 
-    // --- Resumen para WhatsApp (se arma ANTES de vaciar el carrito) ---
     let mensaje = "Hola, hice un pedido en la página:\n";
     productos.forEach(function (p) {
         mensaje += "- " + p.nombre + " x" + p.cantidad + " ($" + p.subtotal + ")\n";
@@ -218,7 +202,6 @@ btn_enviar.addEventListener("click", async function () {
     mensaje += "Pago: " + pago;
     if (notas) { mensaje += "\nNotas: " + notas; }
 
-    // --- Limpiar todo ---
     reiniciarCarrito();
     document.getElementById("nombreCliente").value = "";
     document.getElementById("telefono").value = "";
@@ -234,5 +217,4 @@ btn_enviar.addEventListener("click", async function () {
     }
 });
 
-// ==================== ARRANQUE ====================
 cargarCatalogo();
