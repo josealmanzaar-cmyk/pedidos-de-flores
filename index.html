@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI BELLA CREACIÓN | Flores de foami colima</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Playfair+Display&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- AQUÍ INICIO EL ENCABEZADO-->
+    <header>
+        <div class="titulo">
+        <h1>Mi bella creación</h1>
+        <h3>Flores de foami Colima</h3>
+        <p>Hacer flores de foami es mucho más que una manualidad: es plasmar tus ideas y emociones en cada pétalo. Cada diseño es único, hecho a mano y con cariño. Aquí encontrarás la flor que mejor hable por ti.</p>
+        </div>
+    </header>
+    
+    
+    <!-- la barra para cambiar de sección-->
+    <nav>
+        <a href="#catalogo">Catalogo</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#personalizado">Pedido personalizado</a>
+    </nav>
+    <br>
+    
+    
+    <!-- AQUÍ INICIAN LOS PRODUCTOS-->
+    <main>
+        <section id="catalogo">
+            <!-- Las flores se dibujan solas desde la base de datos (script.js) -->
+            <p class="aviso_catalogo" style="text-align:center; padding:30px;">Cargando catálogo...</p>
+        </section>
+        
+        <section>
+            
+        </section>
+        
+        
+        <!-- formulario de compra-->
+        <div class="formulario" id="pedido">
+            <h3>Arma tu pedido</h3>
+
+            <h3>Tu carrito</h3>
+            <ul id="lista" class="lista"></ul>
+
+            <p id="final" class="fila">Total: $0.00</p>
+            
+            
+            <h3>Tus datos</h3>
+
+            <p class="etiqueta">Tu nombre</p>
+            <input id="nombreCliente" class="campo" type="text" autocomplete="name" placeholder="Escribe tu nombre completo">
+
+            <p class="etiqueta">Tu teléfono / WhatsApp</p>
+            <input id="telefono" class="campo" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ej. 312 123 4567">
+
+            <p class="etiqueta">¿Cómo lo quieres?</p>
+            <select id="entrega" class="campo">
+                <option value="Recoger en tienda">Paso a recogerlo</option>
+                <option value="Envío a domicilio">Envío a domicilio</option>
+            </select>
+
+            <div id="bloqueDireccion" style="display:none">
+                <p class="etiqueta">Dirección de entrega</p>
+                <input id="direccion" class="campo" type="text" autocomplete="street-address" placeholder="Calle, número, colonia">
+            </div>
+
+            <p class="etiqueta">¿Para qué fecha lo necesitas?</p>
+            <input id="fecha" class="campo" type="date">
+
+            <p class="etiqueta">Notas (colores, listón, mensaje...)</p>
+            <textarea id="notas" class="campo" rows="3" placeholder="Ej. Quiero la rosa en color rosa y con listón dorado"></textarea>
+
+            <p class="etiqueta">Forma de pago</p>
+            <select id="pago" class="campo">
+                <option value="">Elige una opción</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>
+            <button class="btn-enviar">ENVIAR PEDIDO</button>
+            </div>
+            <button class="wht"><a href="https://wa.me/523122982723"><img src="wht.jpeg" alt="WhatsApp"></a></button>
+    </main>
+    
+    
+    <!-- Barra del carrito de compras -->
+    <div class="barra_carrito">
+    <p>🛒 <span id="piezas"></span> pza · $<span id="total">0.00</span></p>
+    <button class="pedido"><a href="#pedido" style="text-decoration:none;">ver pedido</a></button>
+</div>
+
+
+<footer style="text-align:center; padding:30px 15px; color:#666; font-size:0.9rem;">
+  <p><b>Mi Bella Creación - Flores de foami Colima</b></p>
+  <p>Hecho a mano con cariño en Colima, Col.</p>
+  <p>Pedidos por WhatsApp: 312 298 2723</p>
+  <p>© 2026 Mi Bella Creación</p>
+</footer>
+
+     <!-- Aquí es el javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

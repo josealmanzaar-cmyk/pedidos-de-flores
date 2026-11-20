@@ -1,0 +1,284 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root{
+    --primary-color: #2c3e50;
+    --gold:#1c15ff;
+    --card-color:#928686;
+    --accent-color: #d4af37;
+    --green-color: #556b2f;
+    --bg-color: #faf9f6;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins',serif;
+    --shadow: 0 15px 35px rgba(0,0,0,0.05);
+    --shadow-hover: 0 20px 45px rgba(0,0,0,0.1);
+    --hover:#DDE5D8;
+}
+#catalogo article .pal_carrito{
+    width: 200px;
+    padding: 15px;
+    background-color: #ff95d2;
+    font-size: 12px;
+    border-radius: 12px;
+}
+
+#catalogo article .pal_carrito:active{
+    background-color: #baff55;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+.titulo {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(180deg, #f4f1ea 0%, var(--bg-color) 100%);
+        }
+        .titulo h1 { font-size: 3rem; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .titulo h3 {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: var(--green-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .titulo p { max-width: 700px; margin: 0 auto; color: var(--text-light); font-size: 1.05rem; }
+nav{
+    background-color: var(--bg-color);
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav a{
+    text-decoration: none;
+    color:var(--text-color);
+    padding: 5px;
+    border-radius: 10px;
+}
+nav a:active{
+    background-color:var(--hover);
+    color:var(--primary-color);
+    -webkit-tap-highlight-color: transparent;
+}
+#catalogo article{
+    border-radius: 12px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 16px;
+    text-align:left;
+    transition: 0.3s;
+}
+#catalogo article h3,#catalogo article p{
+    margin: 8px;
+     font-family:'Cormorant Garamond', serif;
+}
+#catalogo article img{
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 180px;
+    border-radius: 8px;
+}
+#catalogo article button,#catalogo article span{
+    border-radius: 12px 0px 0px 12px;
+    width: 80px;
+    padding: 10px;
+    font-size: 30px;
+    border: none;
+    background-color:var(--card-bg);
+}
+
+#catalogo article button:active{
+    background-color:var(--hover);
+}
+#catalogo article:hover{
+    transform: translateY(-10px);
+} 
+
+/* BARRA DEL CARRITO */
+.barra_carrito,
+.visible{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    z-index: 200;
+    transition: transform 0.3s ease;
+}
+
+.barra_carrito{
+    transform: translateY(100%);
+}
+
+.visible{
+    transform: translateY(0);
+}
+
+.pedido{
+    width: 60%;
+    padding:10px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+}
+
+body.con_carrito{
+    padding-bottom: 120px;
+}
+
+/* FORMULARIO DE PEDIDO */
+.formulario{
+    background-color: var(--card-bg);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    padding: 40px 42px;
+    margin: 40px 20px;
+    color:var(--gold);
+    text-shadow: 1px 2px 1px grey;
+}
+
+.formulario h3{
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 2.2rem;
+    color: var(--gold);
+    text-align: center;
+    margin: 24px 0;
+}
+
+/* LISTA DEL CARRITO */
+.lista{
+    list-style: none;
+    text-align: center;
+    font-style: italic;
+    padding: 30px 0;
+}
+
+.lista li{
+    margin-bottom: 10px;
+}
+
+/* SUBTOTAL Y TOTAL */
+.fila{
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.fila-final{
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    border-bottom: none;
+    padding: 24px 0 10px;
+}
+
+.fila-pequena{
+    font-size: 0.9rem;
+}
+
+/* CAMPOS */
+.etiqueta{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 28px 0 12px;
+}
+
+.campo{
+    display: block;
+    width: 100%;
+    padding: 18px 22px;
+    background-color: #fafafa;
+    border: 1px solid #e3e3e3;
+    border-radius: 16px;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+}
+
+.campo::placeholder{
+    color: #999;
+}
+
+.campo:focus{
+    outline: none;
+    border-color: var(--green-color);
+}
+
+textarea.campo{
+    resize: vertical;
+}
+
+/* BOTÓN DE ENVIAR */
+.btn-enviar{
+    display: block;
+    width: 100%;
+    margin-top: 36px;
+    padding: 24px;
+    border: none;
+    border-radius: 18px;
+    background-color: #25d366;
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.btn-enviar:active{
+    background-color: #1fb757;
+}
+/* AQUI ES LA ADAPTACIÓN A COMPUTADORA*/
+@media (min-width: 768px){
+    #catalogo{
+    display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    #catalogo article{
+        padding: 8px;
+        margin: 15px;
+    }
+
+    #catalogo article img{
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 140px;
+    }
+
+    #catalogo article h3,
+    #catalogo article p{
+        margin: 2px;
+        font-size: 0.85rem;
+    }
+
+    #catalogo article button,
+    #catalogo article span{
+        width: auto;
+        padding: 4px 10px;
+        font-size: 18px;
+        border-radius: 8px;
+    }
+}
