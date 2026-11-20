@@ -53,7 +53,7 @@ ver_pedido.forEach(function (boton, i) {
         div.classList.replace("barra_carrito", "visible");
         cantidad[i].textContent = "0";
 
-        // Cada línea del carrito guarda sus datos para poder restarlos o enviarlos
+  
         const li = document.createElement("li");
         li.className = "listo";
         li.dataset.nombre = pedido;
@@ -100,12 +100,12 @@ entrega.addEventListener("change", function () {
     bloqueDireccion.style.display = entrega.value === "Envío a domicilio" ? "block" : "none";
 });
 
-inputFecha.min = new Date().toLocaleDateString("en-CA"); // formato AAAA-MM-DD
+inputFecha.min = new Date().toLocaleDateString("en-CA");
 
 btn_enviar.addEventListener("click", async function () {
     const items = lista.querySelectorAll("li");
     const nombre = document.getElementById("nombreCliente").value.trim();
-    const telefono = document.getElementById("telefono").value.replace(/\D/g, ""); // solo números
+    const telefono = document.getElementById("telefono").value.replace(/\D/g, ""); 
     const tipoEntrega = entrega.value;
     const direccion = document.getElementById("direccion").value.trim();
     const fecha = inputFecha.value;
